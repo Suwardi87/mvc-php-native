@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="ERD Bootcamp">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- USERS -->
+        <mxCell id="users" value="users
+--------------------
+id (PK)
+name
+email
+password
+role" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- KELAS -->
+        <mxCell id="kelas" value="kelas
+--------------------
+id (PK)
+nama_kelas
+mentor_id (FK)" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="50" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- KELAS_USER -->
+        <mxCell id="kelas_user" value="kelas_user
+--------------------
+id (PK)
+kelas_id (FK)
+user_id (FK)" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="250" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- MATERI -->
+        <mxCell id="materi" value="materi
+--------------------
+id (PK)
+kelas_id (FK)
+judul
+deskripsi
+file" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="220" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- TUGAS -->
+        <mxCell id="tugas" value="tugas
+--------------------
+id (PK)
+kelas_id (FK)
+judul
+deadline" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="250" width="220" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- PENGUMPULAN_TUGAS -->
+        <mxCell id="pengumpulan_tugas" value="pengumpulan_tugas
+--------------------
+id (PK)
+tugas_id (FK)
+user_id (FK)
+file
+nilai
+feedback" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="200" width="250" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- RELATIONS -->
+        <mxCell id="rel1" style="endArrow=block;" edge="1" parent="1" source="users" target="kelas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" style="endArrow=block;" edge="1" parent="1" source="kelas" target="kelas_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel3" style="endArrow=block;" edge="1" parent="1" source="users" target="kelas_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel4" style="endArrow=block;" edge="1" parent="1" source="kelas" target="materi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel5" style="endArrow=block;" edge="1" parent="1" source="kelas" target="tugas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel6" style="endArrow=block;" edge="1" parent="1" source="tugas" target="pengumpulan_tugas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel7" style="endArrow=block;" edge="1" parent="1" source="users" target="pengumpulan_tugas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
